@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 const link = {
   normal: {
-    borderBottom: '1px dotted rgb(0, 168, 0)',
+    borderBottom: '1px dotted rgb(230, 173, 172)',
   },
   hover: {
-    borderBottom: '1px solid rgb(0, 168, 0)',
+    borderBottom: '1px solid rgb(233, 94, 71)',
     color: 'black',
   },
   active: 'hover',
   touchActive: {
-    borderBottom: '1px dashed rgb(0, 168, 0)',
+    borderBottom: '1px dashed rgb(230, 173, 172)',
     color: 'black',
   },
   focusFromTab: {

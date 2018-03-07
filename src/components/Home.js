@@ -9,7 +9,7 @@ export default function Home() {
     <Interactive
       as="a"
       {...s.link}
-      href="https://github.com/rafrex/spa-github-pages#readme"
+      href="https://github.com/andyacosta/andyacosta.github.io.git#readme"
     >{text}</Interactive>
   );
 
@@ -40,6 +40,13 @@ export default function Home() {
           {...s.link}
           to="/example/two-deep?field1=foo&field2=bar#boom!"
         >Example two deep with query and hash</Interactive>
+      </div>
+      <div style={s.pageLinkContainer}>
+        <Interactive
+          as={Link}
+          {...s.link}
+          to="/resume"
+        >Resume</Interactive>
       </div>
     </div>
   );
