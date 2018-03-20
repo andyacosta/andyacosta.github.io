@@ -3,6 +3,9 @@ import Interactive from 'react-interactive';
 import { Link } from 'react-router-dom';
 import { Code } from '../styles/style';
 import s from '../styles/home.style';
+import Typist from 'react-typist';
+import img from '../imgs/succulentLogo.png';
+
 
 export default function Home() {
   const repoReadmeLink = text => (
@@ -15,6 +18,13 @@ export default function Home() {
 
   return (
     <div>
+      <div>
+        <Typist cursor={{show:false}} avgTypingDelay={100}>
+          <span style={s.text1}>Hello! I'm </span><span style={s.text2}>Andrea
+            <Typist.Backspace count={3} delay={300}/>
+            y Acosta.</span>
+        </Typist>
+      </div>
       <p style={s.p}>
         This is an example single page app built
         with React and React&nbsp;Router using {' '}

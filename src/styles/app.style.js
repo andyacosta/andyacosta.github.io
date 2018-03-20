@@ -47,10 +47,15 @@ s.breadcrumbs = {
   margin: '3vh 0',
 };
 
+s.creditDiv = {
+  textAlign: 'center',
+};
+
 s.creditLine = {
   color: '#A0A0A0',
   fontSize: '14px',
-  marginTop: '50px',
+  fontFamily: 'Open Sans, sans-serif',
 };
+
 
 export default s;
