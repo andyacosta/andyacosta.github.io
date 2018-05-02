@@ -4,6 +4,21 @@ import { Switch, Route, Link } from 'react-router-dom';
 import ExampleTwoDeepComponent from './ExampleTwoDeepComponent';
 import PageNotFound from './PageNotFound';
 import s from '../styles/exampleComponent.style';
+import lifecycle from 'react-pure-lifecycle';
+
+const componentWillMount = () => {
+  console.log('I mounted!');
+  const ele = document.getElementById('loader')
+  const ele2 = document.getElementById('root')
+  if(ele){
+      ele.outerHTML = ''
+      ele2.className = ''
+  }
+};
+
+const methods = {
+  componentWillMount
+};
 
 const ExamplePageText = () => (
   <p style={s.p}>
@@ -13,7 +28,7 @@ const ExamplePageText = () => (
   </p>
 );
 
-export default function ExampleComponent() {
+const ExampleComponent = () => {
   return (
     <Switch>
       <Route
@@ -43,4 +58,38 @@ export default function ExampleComponent() {
       <Route component={PageNotFound} />
     </Switch>
   );
-}
+};
+
+export default lifecycle(methods)(ExampleComponent);
+
+/*export default function ExampleComponent() {
+  return (
+    <Switch>
+      <Route
+        exact path="/example/two-deep"
+        render={({ location }) => (
+          <div>
+            <ExamplePageText />
+            <ExampleTwoDeepComponent location={location} />
+          </div>
+        )}
+      />
+      <Route
+        exact path="/example"
+        render={() => (
+          <div>
+            <ExamplePageText />
+            <div style={s.pageLinkContainer}>
+              <Interactive
+                as={Link}
+                {...s.link}
+                to="/example/two-deep?field1=foo&field2=bar#boom!"
+              >Example two deep with query and hash</Interactive>
+            </div>
+          </div>
+        )}
+      />
+      <Route component={PageNotFound} />
+    </Switch>
+  );
+}*/

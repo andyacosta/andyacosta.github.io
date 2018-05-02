@@ -23,14 +23,33 @@
       /*pass window height (w/o scroll bars) down to react app, note can't use vh becasue that
       includes scroll bars and mobile browser footer, etc so doesn't give viewable area*/
       html, body { height: 100%; }
-      html { background-color: rgb(251, 194, 88); }
-      #root { background-color: #ECE8DF; min-height: 100%; }
+      html { background-color: #39444e; }
+      #root { background-color: #FBDDC9; min-height: 100%; }
 
       /*required for IE/Edge to be compatible with left:50vw & transform:translate(-50%, 0),
       otherwise there is a phantom div on the right side of the screen (from the left:50vw),
       that the window will scroll to. Note the left:50vw and transform is used to center content
       horizaontally based on vw to prevent content jump when vertical scroll bar show/hide.*/
       body { overflow-x: hidden; }
+
+      .hidden{
+        display:none;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        opacity: 0;
+      }
+
+      .show{
+        display: visible;
+        opacity: 1;
+      }
+
+      .loader{
+        height: 100vh;
+        background-color: #E95E47;
+      }
     </style>
 
     <!-- start favicon -->
@@ -49,8 +68,8 @@
     <meta name="theme-color" content="#000000">
     <!-- end favicon -->
 
-    <!-- Start Anime Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <!-- Start Vivus Library -->
+    <script src="//cdn.jsdelivr.net/npm/vivus@latest/dist/vivus.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 
 
@@ -88,7 +107,12 @@
 
   </head>
   <body>
-    <div id="root"></div>
+    <div id="loader" class="loader">
+      <script>
+        var header = new Vivus('loader', {type: 'oneByOne', duration: 400, file: '/src/imgs/headerNoLogo.svg', animTimingFunction: Vivus.EASE_IN}, function(){ new Vivus ('loader', {file: '/src/imgs/headerText.svg'})});
+      </script>
+    </div>  
+    <div id="root" class="hidden"></div>
     <!-- single page app in bundle.js -->
     <script src="/build/bundle.js"></script>
   </body>

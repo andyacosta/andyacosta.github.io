@@ -57,5 +57,9 @@ s.creditLine = {
   fontFamily: 'Open Sans, sans-serif',
 };
 
+s.drawLine = {
+
+};
+
 
 export default s;
