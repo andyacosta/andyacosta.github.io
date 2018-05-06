@@ -9,4 +9,9 @@ s.intro = {
 	textAlign: 'center',
 };
 
+s.introBody = {
+	marginBottom: '30px',
+	paddingTop: '5px',
+}
+
 export default s;

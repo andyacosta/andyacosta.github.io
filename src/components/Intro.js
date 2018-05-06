@@ -12,7 +12,7 @@ class Intro extends React.Component{
 
   render() {
     return (
-    	<div>
+    	<div style={s.introBody}>
 	    	<Typist cursor={{show:false}} avgTypingDelay={100} startDelay={200}>
 		    	<span style={s.intro}>Hello! I'm Andrea
 			    	<Typist.Backspace count={3} delay={200} />

@@ -22,6 +22,29 @@ const link = {
   touchActiveTapOnly: true,
 };
 
+const navLink = {
+  normal: {
+    borderTop: 'none',
+    marginTop: '50px',
+  },
+  hover: {
+    borderTop: '3px solid rgb(233, 94, 71)',
+    color: 'rgb(233, 94, 71)',
+    marginTop: '150px',
+  },
+  active: 'hover',
+  touchActive: {
+    borderTop: '3px solid rgb(233, 94, 71)',
+    color: 'black',
+  },
+  focusFromTab: {
+    outline: '2px solid rgb(0, 152, 0)',
+    outlineOffset: '2px',
+    color: 'black',
+  },
+  touchActiveTapOnly: true,
+};
+
 const childLink = {};
 Object.keys(link).forEach((key) => {
   if (key !== 'touchActiveTapOnly') {
@@ -31,6 +54,7 @@ Object.keys(link).forEach((key) => {
 
 export default {
   link,
+  navLink,
   childLink,
   p: {
     margin: '3vh 0',
