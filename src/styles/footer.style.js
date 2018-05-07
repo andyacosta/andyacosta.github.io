@@ -26,7 +26,7 @@ s.footerIcons = {
 };
 
 s.creditLine = {
-  color: '#A0A0A0',
+  color: '#000',
   fontSize: '14px',
   fontFamily: 'Open Sans, sans-serif',
 };

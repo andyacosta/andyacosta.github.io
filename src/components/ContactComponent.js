@@ -5,6 +5,7 @@ import ExampleTwoDeepComponent from './ExampleTwoDeepComponent';
 import PageNotFound from './PageNotFound';
 import s from '../styles/contact.style';
 import lifecycle from 'react-pure-lifecycle';
+import ContactFormComponent from './ContactFormComponent';
 
 const componentWillMount = () => {
   console.log('I mounted!');
@@ -21,17 +22,20 @@ const methods = {
 };
 
 const ContactForm = () => (
-  <form method="POST">
-    <label htmlFor="name">Name</label>
-    <input type="text" name="name" />
-
-    <label htmlFor="email">Email</label>
-    <input type="email" name="email" />
-
-    <label htmlFor="message">Message</label>
-    <textarea name="message" rows="3"></textarea>
-
-    <input type="submit" />
+  <form id="contact-form"  method="POST">
+      <div className="form-group">
+          <label for="name">Name</label>
+          <input type="text" className="form-control" id="name" />
+      </div>
+      <div className="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" className="form-control" id="email" aria-describedby="emailHelp" />
+      </div>
+      <div className="form-group">
+          <label for="message">Message</label>
+          <textarea className="form-control" rows="5" id="message"></textarea>
+      </div>
+      <button type="submit" className="btn btn-primary">Submit</button>
   </form>
 
 );
@@ -52,9 +56,9 @@ const ContactComponent = () => {
         render={() => (
           <div>
             <ContactPageText />
-            <ContactForm />
+            <ContactFormComponent />
             <div style={s.pageLinkContainer}>
-            	stuff2~
+            	//
             </div>
           </div>
         )}

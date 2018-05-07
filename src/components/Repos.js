@@ -24,7 +24,7 @@ class Repos extends Component {
       <div>
         {hits.map(hit =>
           <div>
-            {hit.full_name}
+            <a href={'http://github.com/' + hit.full_name}>{hit.name}</a>
           </div>
         )}
       </div>

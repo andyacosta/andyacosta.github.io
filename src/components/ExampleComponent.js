@@ -5,6 +5,8 @@ import ExampleTwoDeepComponent from './ExampleTwoDeepComponent';
 import PageNotFound from './PageNotFound';
 import s from '../styles/exampleComponent.style';
 import lifecycle from 'react-pure-lifecycle';
+import Fade from 'react-reveal/Fade';
+import img from '../imgs/me.jpg';
 
 const componentWillMount = () => {
   console.log('I mounted!');
@@ -20,11 +22,18 @@ const methods = {
   componentWillMount
 };
 
+//<img src={img} height="200"/>
+
 const ExamplePageText = () => (
   <p style={s.p}>
-    This is an example page. Refresh the page or copy/paste the url to
-    test out the redirect functionality (this same page should load
-      after the redirect).
+    
+    I'm Andy Acosta and I am a software developer! 
+    At twelve, I decided to teach myself to code, leading to a B.S. in Computer Science from The George Washington University.
+    I am currently doing Salesforce development but have a background in front-end/back-end web. I specialize in Java and JavaScript, but 
+    I'm always looking for new languages and frameworks to learn. 
+    <br/>
+    When I'm not coding, you can find me running on the trails, traveling to new places, or eating chicken tenders with ranch.
+
   </p>
 );
 
@@ -44,7 +53,9 @@ const ExampleComponent = () => {
         exact path="/example"
         render={() => (
           <div>
-            <ExamplePageText />
+            <Fade bottom>
+              <ExamplePageText />
+            </Fade>
             <div style={s.pageLinkContainer}>
               <Interactive
                 as={Link}

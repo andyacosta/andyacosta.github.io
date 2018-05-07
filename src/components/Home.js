@@ -29,7 +29,7 @@ class Home extends React.Component{
         this.setState({
             showComponent: true,
         });
-      }, 9000)//9250
+      }, 15)//9000
     }
   }
 

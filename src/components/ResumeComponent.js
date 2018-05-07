@@ -8,22 +8,6 @@ import s from '../styles/exampleComponent.style';
 import lifecycle from 'react-pure-lifecycle';
 import GitHub from 'github-api';
 
-
-/*const gh = new GitHub({
-	'token' : '32cb6ae8a3df7dfafe93e43f091b48fd099af9f0',
-});
-
-const me = gh.getUser();
-
-var repoText;
-const repos = me.listRepos()
-	.then((result) => {
-		console.log(JSON.stringify(result.data));
-		this.repoText == JSON.parse(result.data);
-	});
-
-*/
-
 const componentWillMount = () => {
   console.log('I mounted!');
   const ele = document.getElementById('loader')

@@ -24,7 +24,9 @@
     "react-cellblock": "^3.0.4",
     "react-dom": "^16.3.2",
     "react-interactive": "^0.8.1",
+    "react-mailto.js": "^1.1.0",
     "react-pure-lifecycle": "^2.2.0",
+    "react-reveal": "^1.2.1",
     "react-router-dom": "^4.2.2",
     "react-typist": "^2.0.4",
     "reactstrap": "^6.0.1"
