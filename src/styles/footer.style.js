@@ -22,7 +22,7 @@ s.footer = {
 s.footerIcons = {
   width: '200px',
   margin: '0 auto',
-  paddingTop: '30px',
+  paddingBottom: '15px',
 };
 
 s.creditLine = {

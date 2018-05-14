@@ -3,7 +3,7 @@ import style from './style';
 const s = Object.create(style);
 
 s.root = {
-  fontFamily: 'Gentium Book Basic, serif',
+  fontFamily: 'Open Sans',
   fontWeight: '200',
   fontSize: '14px',
   letterSpacing: '0.025em',

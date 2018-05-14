@@ -4,9 +4,10 @@ import { Switch, Route, Link } from 'react-router-dom';
 import ExampleTwoDeepComponent from './ExampleTwoDeepComponent';
 import Repos from './Repos';
 import PageNotFound from './PageNotFound';
-import s from '../styles/exampleComponent.style';
+import s from '../styles/resumerepos.style';
 import lifecycle from 'react-pure-lifecycle';
 import GitHub from 'github-api';
+import ReactFitText from 'react-fittext';
 
 const componentWillMount = () => {
   console.log('I mounted!');
@@ -24,9 +25,9 @@ const methods = {
 
 const ResumePageText = () => (
   <p style={s.p}>
-    This is a resume page. Refresh the page or copy/paste the url to
-    test out the redirect functionality (this same page should load
-      after the redirect).
+    <span style={s.resumeText}>Below is a list of my <a href="http://github.com/andyacosta">github repos</a> and projects that I have worked on.</span>
+
+
   </p>
 );
 
@@ -37,11 +38,11 @@ const ResumeComponent = () => {
         exact path="/resume"
         render={() => (
           <div>
-            <ResumePageText />
+            <ReactFitText compressor={3}>
+              <ResumePageText />
+            </ReactFitText>
             <Repos />
-            <div style={s.pageLinkContainer}>
-            	stuff~
-            </div>
+          })
           </div>
         )}
       />
@@ -51,38 +52,3 @@ const ResumeComponent = () => {
 };
 
 export default lifecycle(methods)(ResumeComponent);
-
-/*class ResumeComponent extends React.Component{
-  render(){
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-      </div>
-    );
-  }
-}
-
-export default ResumeComponent
-
- const ResumePageText = () => (
-   <p style={s.p}>
-     Here is the resume information.
-   </p>
- );
-
- export default function ResumeComponent() {
-   return (
-     <Switch>
-       <Route
-         exact path="/resume"
-         render={() => (
-           <div>
-             <ResumePageText />
-           </div>
-         )}
-       />
-       <Route component={PageNotFound} />
-     </Switch>
-   );
- }
-*/

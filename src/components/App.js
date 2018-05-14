@@ -20,10 +20,6 @@ export default function App() {
 		<div style={s.root}>
 		  <Navigation />
 
-		  <nav style={s.breadcrumbs}>
-		  <Breadcrumbs />
-		  </nav>
-
 		  <Switch>
 		  <Route exact path="/" component={Home} />
 		  <Route path="/example" component={ExampleComponent} />

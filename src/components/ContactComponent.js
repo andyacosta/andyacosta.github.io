@@ -42,9 +42,7 @@ const ContactForm = () => (
 
 const ContactPageText = () => (
   <p style={s.p}>
-    This is a contact page. Refresh the page or copy/paste the url to
-    test out the redirect functionality (this same page should load
-      after the redirect).
+    <center>Under construction!</center>
   </p>
 );
 
@@ -56,9 +54,9 @@ const ContactComponent = () => {
         render={() => (
           <div>
             <ContactPageText />
-            <ContactFormComponent />
+            
             <div style={s.pageLinkContainer}>
-            	//
+            	
             </div>
           </div>
         )}

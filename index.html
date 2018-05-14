@@ -22,9 +22,10 @@
       }
       /*pass window height (w/o scroll bars) down to react app, note can't use vh becasue that
       includes scroll bars and mobile browser footer, etc so doesn't give viewable area*/
-      html, body { height: 100%; }
-      html { background-color: #39444e; }
-      #root { background-color: #FBDDC9; min-height: 100%; }
+      /*html, body { height: 100%; } */
+      html { height: 100%; }
+      body { min-height: 100%; position: relative; background-color: #FBDDC9; }
+      #root { min-height: 100%; }
 
       /*required for IE/Edge to be compatible with left:50vw & transform:translate(-50%, 0),
       otherwise there is a phantom div on the right side of the screen (from the left:50vw),

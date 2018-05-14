@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Interactive from 'react-interactive';
+import s from '../styles/resumerepos.style';
 
 const API = 'https://api.github.com/users/andyacosta/repos';
 
@@ -22,10 +24,17 @@ class Repos extends Component {
 
     return (
       <div>
-        {hits.map(hit =>
-          <div>
-            <a href={'http://github.com/' + hit.full_name}>{hit.name}</a>
-          </div>
+        {hits.map( (hit, index) =>
+          <span style={s.repoText}>
+            <Interactive 
+                  as="a" 
+                  href="/"
+                  {...s.repoLink}
+                >
+              <a href={'http://github.com/' + hit.full_name}>{hit.name}</a>
+            </Interactive>
+            &nbsp;/&nbsp;
+          </span>
         )}
       </div>
     );

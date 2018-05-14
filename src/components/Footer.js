@@ -20,16 +20,7 @@ export default function Footer(){
 
 	return (
 		<div style={s.footer}>
-			<div>
-				<Interactive
-					as="a"
-					href="https://andyacosta.github.io"
-					style={s.repoLink}
-					{...s.link}
-				>
-				<span style={s.creditLine}>{repoLink('MADE WITH ')}</span><i className="fab fa-react"></i>
-				</Interactive>
-			</div>
+			
 			<div style={s.footerIcons}>
 				<Grid>
 					<Row>
@@ -64,6 +55,16 @@ export default function Footer(){
 						</Column>
 					</Row>
 				</Grid>
+			</div>
+			<div>
+				<Interactive
+					as="a"
+					href="https://andyacosta.github.io"
+					style={s.repoLink}
+					{...s.link}
+				>
+				<span style={s.creditLine}>{repoLink('MADE WITH ')}</span><i className="fab fa-react"></i>
+				</Interactive>
 			</div>
 		</div>
 	)
